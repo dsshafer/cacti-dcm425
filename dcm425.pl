@@ -22,7 +22,7 @@ else
 my $URL='http://' . $hostname . '/diagnostics_page.asp';
 
 # Fetch data
-my $_ = `GET $URL`;
+my $_ = `GET -t 10 $URL`;
 
 # Downstream SNR
 if (/DSSnrInfo.*value='([0-9\.]*) dB'/) {
